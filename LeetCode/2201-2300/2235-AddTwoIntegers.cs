@@ -1,0 +1,11 @@
+// Link: https://leetcode.com/problems/add-two-integers/
+
+namespace LeetCode;
+
+public class _2235_AddTwoIntegers
+{
+    public int Sum(int num1, int num2)
+    {
+        return num1 + num2;
+    }
+}
