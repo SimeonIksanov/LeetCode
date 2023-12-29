@@ -33,7 +33,7 @@ public class _0002_AddTwoNumbers_Test
 
     private ListNode CreateLinkedListFromArray(int[] array)
     {
-        if (array == null || array.Length == 0) return null;
+        if (array == null || array.Length == 0) return null!;
 
         ListNode root = new ListNode(array[0]);
         ListNode last = root;

@@ -7,8 +7,8 @@ public class _0101_SymmetricTree_Test
 {
     [Theory]
     [InlineData(new object[] { 1, 2, 2, 3, 4, 4, 3 }, true)]
-    [InlineData(new object[] { 1, 2, 2, 3, null, null, 3 }, true)]
-    [InlineData(new object[] { 1, 2, 2, 2, null, 2 }, false)]
+    [InlineData(new object[] { 1, 2, 2, 3, null!, null!, 3 }, true)]
+    [InlineData(new object[] { 1, 2, 2, 2, null!, 2 }, false)]
     public void IsSymmetricTree(object[] values, bool expected)
     {
         // while (!Debugger.IsAttached)

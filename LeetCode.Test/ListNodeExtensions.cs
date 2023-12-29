@@ -19,7 +19,7 @@ public static class TreeNodeExtensions
 {
     public static TreeNode ToTree(this object[] values)
     {
-        if (values.Length == 0) return null;
+        if (values.Length == 0) return null!;
 
         var root = BuildTree(values, 0);
         return root;
@@ -28,12 +28,12 @@ public static class TreeNodeExtensions
     private static TreeNode BuildTree(object[] values, int index)
     {
         if (values.Length == 0 || index >= values.Length)
-            return null;
+            return null!;
 
         var node = values[index] != null ? new TreeNode((int)values[index],
                                 BuildTree(values, 2 * index + 1),
                                 BuildTree(values, 2 * index + 2))
                                 : null;
-        return node;
+        return node!;
     }
 }

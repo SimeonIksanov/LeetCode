@@ -12,7 +12,7 @@ public class _0021_MergeTwoSortedLists_Test
 
         var actual = sut.MergeTwoLists(list1, list2);
 
-        while(expected != null && actual != null)
+        while (expected != null && actual != null)
         {
             Assert.Equal(expected.val, actual.val);
             expected = expected.next;
@@ -31,15 +31,11 @@ public class _0021_MergeTwoSortedLists_Test
 
         yield return new object[] { list1, list2, expected };
 
-        list1 = null;
-        list2 = null;
-        expected = null;
-        yield return new object[] { list1, list2, expected };
+        yield return new object[] { null!, null!, null! };
 
-        list1 = null;
         list2 = BuildListNode(0);
         expected = BuildListNode(0);
-        yield return new object[] { list1, list2, expected };
+        yield return new object[] { null!, list2, expected };
     }
 
     private static _0021_MergeTwoSortedLists.ListNode BuildListNode(params int[] values)
