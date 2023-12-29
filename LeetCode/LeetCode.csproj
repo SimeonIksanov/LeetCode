@@ -9,7 +9,4 @@
   <ItemGroup>
     <None Remove="0101-0200\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="0101-0200\" />
-  </ItemGroup>
 </Project>
