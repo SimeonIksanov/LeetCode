@@ -2,16 +2,24 @@
 
 public static class TreeNodeExtensions
 {
-    public static TreeNode? ToTreeNode(this object[] items, int index = 0)
+    public static TreeNode ToTree(this object[] values)
     {
-        if (items is null|| index >= items.Length || items[index] is null) return null;
+        if (values.Length == 0) return null!;
 
-        var node = new TreeNode((int)items[index])
-        {
-            left = items.ToTreeNode(index * 2 + 1),
-            right = items.ToTreeNode(index * 2 + 2),
-        };
+        var root = BuildTree(values, 0);
+        return root;
+    }
 
-        return node;
+    private static TreeNode BuildTree(object[] values, int index)
+    {
+        if (values.Length == 0 || index >= values.Length)
+            return null!;
+
+        var node = values[index] != null ? new TreeNode((int)values[index],
+                                BuildTree(values, 2 * index + 1),
+                                BuildTree(values, 2 * index + 2))
+                                : null;
+        return node!;
     }
 }
+
