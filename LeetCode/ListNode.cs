@@ -11,4 +11,9 @@ public class ListNode
         this.val = val;
         this.next = next;
     }
+
+    public override string ToString()
+    {
+        return val.ToString();
+    }
 }

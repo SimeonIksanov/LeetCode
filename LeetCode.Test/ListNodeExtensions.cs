@@ -13,4 +13,15 @@ public static class ListNodeExtensions
         }
         return head.next;
     }
+
+    public static int[] ToArray(this ListNode list)
+    {
+        var listArray = new List<int>();
+        while (list is not null)
+        {
+            listArray.Add(list.val);
+            list = list.next;
+        }
+        return listArray.ToArray();
+    }
 }
