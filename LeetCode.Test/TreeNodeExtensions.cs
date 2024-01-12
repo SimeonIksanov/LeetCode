@@ -10,6 +10,14 @@ public static class TreeNodeExtensions
         return root;
     }
 
+    public static object[] ToArray(this TreeNode root)
+    {
+        var list = new List<object>();
+        if (root is null) return list.ToArray();
+        ToArrayReqursive(root, list, 0);
+        return list.ToArray();
+    }
+
     private static TreeNode BuildTree(object[] values, int index)
     {
         if (values.Length == 0 || index >= values.Length)
@@ -21,5 +29,15 @@ public static class TreeNodeExtensions
                                 : null;
         return node!;
     }
-}
 
+    private static void ToArrayReqursive(TreeNode root, List<object> list, int index)
+    {
+        if (root is null) return;
+
+        while (index >= list.Count)
+            list.Add(null!);
+        list[index] = root.val;
+        ToArrayReqursive(root.left, list, index * 2 + 1);
+        ToArrayReqursive(root.right, list, index * 2 + 2);
+    }
+}
