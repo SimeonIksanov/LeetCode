@@ -9,7 +9,7 @@ public class _1026_MaximumDifferenceBetweenNodeAndAncestor_Test
     public void MaxAncestorDiff(object[] nums, int expected)
     {
         var sut = new _1026_MaximumDifferenceBetweenNodeAndAncestor();
-        var actual = sut.MaxAncestorDiff(nums.ToTreeNode());
+        var actual = sut.MaxAncestorDiff(nums.ToTree());
         Assert.Equal(expected, actual);
     }
 }

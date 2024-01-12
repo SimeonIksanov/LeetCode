@@ -7,7 +7,7 @@ public class _2385_AmountOfTimeForBinaryTreeToBeInfected_Test
     [InlineData(new object[] { 1 }, 1, 0)]
     public void AmountOfTime(object[] nums, int start, int expected)
     {
-        var tree = nums.ToTreeNode();
+        var tree = nums.ToTree();
         var sut = new _2385_AmountOfTimeForBinaryTreeToBeInfected();
         var actual = sut.AmountOfTime(tree, start);
         Assert.Equal(expected, actual);
